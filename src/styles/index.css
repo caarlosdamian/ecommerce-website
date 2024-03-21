@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+
+    .h1-bold {
+        @apply text-4xl tracking-[1.286px] font-bold leading-[58px] sm:tracking-[2px] sm:text-[56px];
+    }
+
+    .h2-bold {
+        @apply text-[40px] font-bold leading-[44px] tracking-[1.429px];
+    }
+
+    .h3-bold {
+        @apply text-2xl tracking-[0.857px] font-bold leading-[36px] sm:text-[32px] sm:tracking-[1.143px];
+    }
+
+    .h4-bold {
+        @apply text-[28px] font-bold leading-normal tracking-[2px];
+    }
+
+    .h5-bold {
+        @apply text-[24px] font-bold leading-normal tracking-[1.714px];
+    }
+
+    .h6-bold {
+        @apply  text-[15px] tracking-[1.071px] font-bold leading-normal sm:text-[18px] sm:tracking-[1.286px];
+    }
+
+    .overline {
+        @apply text-[14px] font-normal leading-normal tracking-[10px];
+    }
+
+
+    .subtitle-bold {
+        @apply text-[13px] font-bold leading-[25px] tracking-[0.929px];
+    }
+
+    .body{
+        @apply text-[15px] font-normal leading-[25px];
+    }
+
+}
