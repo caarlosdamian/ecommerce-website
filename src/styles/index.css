@@ -40,9 +40,12 @@
         @apply text-[14px] font-normal leading-normal tracking-[10px];
     }
 
-
     .subtitle-bold {
         @apply text-[13px] font-bold leading-[25px] tracking-[0.929px];
+    }
+
+    .subtitle-bold-1px {
+        @apply text-[13px] font-bold leading-[25px] tracking-[1px];
     }
 
     .body{
