@@ -11,6 +11,7 @@ export default {
         customWhite: '#FFF',
         customGray: '#F1F1F1',
         customAlmostWhite: '#FAFAFA',
+        error: '#CD2C2C',
       },
     },
   },
