@@ -10,6 +10,7 @@ interface Props extends HtmlHTMLAttributes<HTMLInputElement> {
 
 export const TextInput = ({ label, isError, placeholder, ...props }: Props) => {
   const { formatMessage } = useIntl();
+  // TODO:  ADD STATES
   return (
     <label htmlFor={label} className="flex flex-col gap-[9px]">
       <div className="flex justify-between items-center">
@@ -31,7 +32,7 @@ export const TextInput = ({ label, isError, placeholder, ...props }: Props) => {
         {...props}
         placeholder={formatMessage({ id: placeholder })}
         className={cn(
-          'outline-none rounded-lg p-[18px] ring-1 ring-[#CFCFCF] placeholder placeholder:text-opacity-40 focus:ring-primary',
+          'outline-none rounded-lg p-[18px] ring-1 ring-[#CFCFCF] placeholder placeholder:text-opacity-40 focus:ring-primary caret-primary',
           isError && 'ring-error'
         )}
       ></input>

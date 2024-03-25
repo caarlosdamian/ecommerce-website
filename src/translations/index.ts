@@ -11,6 +11,7 @@ export const messages = {
     form_testing_placeholder: 'testing',
     btn_shop_label: 'shop',
     btn_see_product_label: 'See Product',
+    radio_label_example: 'e-Money',
     form_error: 'Wrong {element}',
   },
 };
