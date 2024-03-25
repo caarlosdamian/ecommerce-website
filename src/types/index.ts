@@ -8,4 +8,4 @@ export interface LocaleI {
   ENGLISH: string;
 }
 
-export type ChildrenFunction = (increment: () => void, decrement: () => void, counter: number) => React.ReactNode;
+export type ChildrenFunction = (counter: number) => void;
