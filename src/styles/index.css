@@ -56,8 +56,16 @@
         @apply text-[15px] font-normal leading-[25px];
     }
 
+    .medium {
+        @apply text-lg font-normal leading-normal tracking-[1.286px]; 
+    }
+    
+    .medium-bold {
+        @apply text-lg font-bold leading-normal tracking-[1.286px]; 
+    }
+
     .small{
-        @apply text-[12px] font-normal leading-normal tracking-[-0.214px]; 
+        @apply text-[12px] font-bold leading-normal tracking-[-0.214px]; 
     }
 
     .small-bold{
