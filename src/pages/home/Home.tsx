@@ -7,11 +7,12 @@ import { CategoryCard } from '../../components/shared/categoryCard/CategoryCard'
 import categoryimg from '../../assets/shared/desktop/image-category-thumbnail-headphones.png';
 import categoryimg3 from '../../assets/shared/desktop/image-category-thumbnail-earphones.png';
 import categoryimg2 from '../../assets/shared/desktop/image-category-thumbnail-speakers.png';
+import { FeatureProduct } from '../../components/shared/featureProduct/FeatureProduct';
 
 export const Home = () => {
   return (
-    <div className="flex flex-col items-center">
-      Home
+    <div className="flex flex-col items-center py-[200px]">
+      {/* Home
       <Button variant="primary" id="btn_see_product_label" />
       <br />
       <Button variant="secondary" id="btn_see_product_label" />
@@ -50,7 +51,10 @@ export const Home = () => {
       <br />
       <br />
       <br />
-      <br />
+      <br /> */}
+      <FeatureProduct />
+      <FeatureProduct isNew />
+      <FeatureProduct isNew />
     </div>
   );
 };
