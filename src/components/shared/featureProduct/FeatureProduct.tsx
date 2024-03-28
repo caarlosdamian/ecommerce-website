@@ -1,11 +1,13 @@
-import React from 'react';
-import { Button } from '../button/Button';
-import img from '../../../assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg';
-import imgtablet from '../../../assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg';
-import imgdesk from '../../../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg';
+import React from "react";
+import { Button } from "../button/Button";
+import img from "../../../assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg";
+import imgtablet from "../../../assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg";
+import imgdesk from "../../../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg";
+import { Product } from "../../../types";
 
 interface Props {
   isNew?: boolean;
+  item: Product;
 }
 
 export const FeatureProduct = ({ isNew }: Props) => {
