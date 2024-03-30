@@ -1,10 +1,10 @@
-import { LocaleI } from "../types";
+import { LocaleI, messagesI } from "../types";
 
 export const LOCALES: LocaleI = {
   ENGLISH: "en",
 };
 
-export const messages = {
+export const messages: messagesI = {
   en: {
     GREETING: "Hello {name}",
     form_testing_label: "testing",

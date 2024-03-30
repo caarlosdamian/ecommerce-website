@@ -45,3 +45,7 @@ export interface Product {
   features: string;
   includes: IncludedItem[];
 }
+
+export interface messagesI {
+  en: { [key: string]: string };
+}
