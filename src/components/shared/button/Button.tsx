@@ -17,7 +17,7 @@ export const Button = ({ variant, id, ...props }: Props) => {
     <button
       {...props}
       className={cn(
-        `subtitle-bold-1px text-customWhite uppercase `,
+        `subtitle-bold-1px text-customWhite uppercase`,
         BtnVariants[key]
       )}
     >
