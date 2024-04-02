@@ -1,18 +1,26 @@
-import { NavLink } from "react-router-dom";
-import { cart, hamburger, logo } from "../../../assets";
-import { headerLinks } from "../../../constants";
-import { useIntl } from "react-intl";
+import { NavLink } from 'react-router-dom';
+import { cart, hamburger, logo } from '../../../assets';
+import { headerLinks } from '../../../constants';
+import { useIntl } from 'react-intl';
 
-export const Header = () => {
+interface Props {
+  handleOpen: () => void;
+}
+
+export const Header = ({ handleOpen }: Props) => {
   const { formatMessage } = useIntl();
   return (
     <header className="bg-customBlack h-[89px] border-b border-customWhite sm:border-none border-opacity-[0.104] lg:h-[96px] sm:px-10">
       <section className="container mx-auto flex justify-between items-center h-full w-full px-6 gap-[42px] border-opacity-[0.104] sm:border-customWhite sm:border-b sm:border-opacity-20 md:px-0">
         <div className="lg:hidden">
-          <img src={hamburger} alt="hamburger" />
+          <img src={hamburger} alt="hamburger" onClick={handleOpen} />
         </div>
         <div className="md:justify-start md:flex-1 lg:flex lg:items-center lg:gap-[198px]">
-          <img src={logo} alt="logo" className="lg:w-[143px] lg:h-[25px] object-contain"/>
+          <img
+            src={logo}
+            alt="logo"
+            className="lg:w-[143px] lg:h-[25px] object-contain"
+          />
           <ul className="hidden lg:flex items-center text-customWhite gap-[34px]">
             {headerLinks.map((link) => (
               <NavLink
