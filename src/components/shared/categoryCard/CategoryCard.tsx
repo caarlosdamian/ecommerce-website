@@ -1,8 +1,9 @@
 import { useIntl } from 'react-intl';
 import { CategoryI } from '../../../types';
 import { Button } from '../button/Button';
+import { Link } from 'react-router-dom';
 
-export const CategoryCard = ({ category, productImg }: CategoryI) => {
+export const CategoryCard = ({ category, productImg,path,action }: CategoryI) => {
   const { formatMessage } = useIntl();
   return (
     <div className="bg-customGray w-[327px] h-[165px] rounded-lg px-[115px] pt-[80px] pb-6 relative flex items-center justify-center flex-col gap-4 sm:w-[223px] lg:w-[350px] lg:h-[204px] lg:px-[108px]">
@@ -14,7 +15,9 @@ export const CategoryCard = ({ category, productImg }: CategoryI) => {
       <span className="h6-bold md:medium-bold">
         {formatMessage({ id: category })}
       </span>
-      <Button variant="link" id="btn_shop_label" />
+      <Link to={path} onClick={action && action}>
+        <Button variant="link" id="btn_shop_label" />
+      </Link>
     </div>
   );
 };

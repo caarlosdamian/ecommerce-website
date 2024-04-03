@@ -31,15 +31,18 @@ export const categories = [
     id: 'header_headphone_label',
     img: headphones,
     imgAlt: 'category_headphone_img_alt',
+    path: '/category/headphone',
   },
   {
     id: 'header_speakers_label',
     img: speakers,
     imgAlt: 'category_speakers_img_alt',
+    path: '/category/speakers',
   },
   {
     id: 'header_earphones_label',
     img: earphones,
     imgAlt: 'category_earphones_img_alt',
+    path: '/category/earphones',
   },
 ];

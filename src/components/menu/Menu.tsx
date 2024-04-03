@@ -14,6 +14,8 @@ export const Menu = ({ handleClosed }: Props) => {
             key={item.id}
             category={item.id}
             productImg={item.img}
+            path={item.path}
+            action={handleClosed}
           />
         ))}
       </div>

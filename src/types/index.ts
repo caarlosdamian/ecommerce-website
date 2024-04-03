@@ -13,6 +13,8 @@ export type ChildrenFunction = (counter: number) => void;
 export interface CategoryI {
   category: string;
   productImg: string;
+  path: string;
+  action?: ()=>void
 }
 
 export interface ImageUrls {
