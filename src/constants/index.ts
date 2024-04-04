@@ -46,3 +46,5 @@ export const categories = [
     path: '/category/earphones',
   },
 ];
+
+

@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface BtnVariantsI {
   LINK: string;
   PRIMARY: string;
@@ -50,4 +52,11 @@ export interface Product {
 
 export interface messagesI {
   en: { [key: string]: string };
+}
+
+export interface PropsChildren {
+  children: ReactNode
+}
+export interface ModalContextInitialState  {
+type: 'idle' | 'cart' | 'menu' | 'order',
 }

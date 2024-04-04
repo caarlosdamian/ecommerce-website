@@ -2,18 +2,21 @@ import { NavLink } from 'react-router-dom';
 import { cart, hamburger, logo } from '../../../assets';
 import { headerLinks } from '../../../constants';
 import { useIntl } from 'react-intl';
+import { useModalContext } from '../../../hooks/useModalContext';
+import { ModalActionTypes } from '../../../context/modal/modalActions';
 
-interface Props {
-  handleOpen: () => void;
-}
-
-export const Header = ({ handleOpen }: Props) => {
+export const Header = () => {
   const { formatMessage } = useIntl();
+  const { handleOpenModal} = useModalContext();
   return (
     <header className="bg-customBlack h-[89px] border-b border-customWhite sm:border-none border-opacity-[0.104] lg:h-[96px] sm:px-10">
       <section className="container mx-auto flex justify-between items-center h-full w-full px-6 gap-[42px] border-opacity-[0.104] sm:border-customWhite sm:border-b sm:border-opacity-20 md:px-0">
         <div className="lg:hidden">
-          <img src={hamburger} alt="hamburger" onClick={handleOpen} />
+          <img
+            src={hamburger}
+            alt="hamburger"
+            onClick={() => handleOpenModal(ModalActionTypes.OPEN_MENU)}
+          />
         </div>
         <div className="md:justify-start md:flex-1 lg:flex lg:items-center lg:gap-[198px]">
           <img
