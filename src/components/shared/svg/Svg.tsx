@@ -5,7 +5,6 @@ export const Svg = ({
   children,
   classNameParent,
 }: {
-  html?: string;
   children: React.ReactElement;
   classNameChild: string;
   classNameParent?: string;
