@@ -20,6 +20,8 @@ export const messages: messagesI = {
     category_headphone_img_alt: 'headphone-category-img',
     category_speakers_img_alt: 'speakers-category-img',
     category_earphones_img_alt: 'earphones-category-img',
+    footer_description: 'Audiophile is an all in one stop to fulfill your audio needs. We\'re a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we\’re open 7 days a week.',
+    footer_copyright: 'Copyright {year}. All Rights Reserved'
 
   },
 };

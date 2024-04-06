@@ -1,12 +1,14 @@
 import { Children } from 'react';
 
 export const Svg = ({
-  className,
+  classNameChild,
   children,
+  classNameParent,
 }: {
   html?: string;
   children: React.ReactElement;
-  className: string;
+  classNameChild: string;
+  classNameParent?: string;
 }) => {
   return (
     <>
@@ -16,9 +18,13 @@ export const Svg = ({
           ...child,
           props: {
             ...child.props,
+            className: classNameParent,
             children: {
               ...child.props.children,
-              props: { ...child.props.children.props, className },
+              props: {
+                ...child.props.children.props,
+                className: classNameChild,
+              },
             },
           },
         };
