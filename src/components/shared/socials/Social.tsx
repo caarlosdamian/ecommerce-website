@@ -1,6 +1,7 @@
+import { cn } from '../../../utils';
 import { Svg } from '../svg/Svg';
 
-export const Socials = () => {
+export const Socials = ({ className }: { className: string }) => {
   const icons = [
     {
       id: 'facebook',
@@ -40,7 +41,7 @@ export const Socials = () => {
     },
   ];
   return (
-    <div className="flex gap-4">
+    <div className={cn('flex gap-4', className)}>
       {icons.map((icon) => (
         <Svg
           key={icon.id}
