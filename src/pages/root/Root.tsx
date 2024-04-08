@@ -9,7 +9,7 @@ export const Root = () => {
       <Modal />
       {/* TODO: THIS CONTAINER WILL BE INCHARGE OF CONTAININT ELEMENTS */}
       <section className="">
-        <main className="container mx-auto h-screen">
+        <main className="container mx-auto ">
           <Outlet />
         </main>
       </section>
