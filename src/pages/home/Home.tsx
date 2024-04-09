@@ -1,7 +1,9 @@
+import { Hero } from "../../components/hero/Hero";
 
 export const Home = () => {
   return (
-    <div className="flex flex-col items-center py-[200px]">
+    <div className="bg-customGray2">
+      <Hero />
     </div>
   );
 };

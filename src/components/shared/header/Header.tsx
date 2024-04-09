@@ -7,9 +7,9 @@ import { ModalActionTypes } from '../../../context/modal/modalActions';
 
 export const Header = () => {
   const { formatMessage } = useIntl();
-  const { handleOpenModal} = useModalContext();
+  const { handleOpenModal } = useModalContext();
   return (
-    <header className="bg-customBlack h-[89px] border-b border-customWhite sm:border-none border-opacity-[0.104] lg:h-[96px] sm:px-10 relative z-20">
+    <header className="bg-[rgb(25,25,25)] h-[89px] border-b border-customWhite sm:border-none sm:border-opacity-[0.104] lg:h-[96px] sm:px-10 relative z-20">
       <section className="container mx-auto flex justify-between items-center h-full w-full px-6 gap-[42px] border-opacity-[0.104] sm:border-customWhite sm:border-b sm:border-opacity-20 md:px-0">
         <div className="lg:hidden">
           <img

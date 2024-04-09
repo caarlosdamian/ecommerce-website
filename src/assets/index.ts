@@ -6,7 +6,7 @@ import hamburger from './shared/tablet/icon-hamburger.svg'
 import earphones from  './shared/desktop/image-category-thumbnail-earphones.png'
 import headphones from  './shared/desktop/image-category-thumbnail-headphones.png'
 import speakers from  './shared/desktop/image-category-thumbnail-speakers.png'
-
+import heroMobile from './home/mobile/image-header.jpg'
 export {
     cart,
     logo,
@@ -15,5 +15,6 @@ export {
     hamburger,
     speakers,
     headphones,
-    earphones
+    earphones,
+    heroMobile
 }
