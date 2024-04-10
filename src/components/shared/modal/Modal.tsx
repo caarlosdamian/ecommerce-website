@@ -21,12 +21,15 @@ interface Props extends PropsChildren {
 const ModalBody = ({ children, className }: Props) => {
   const { handleClosedModal } = useModalContext();
   return (
-    <div
-      className="bg-customBlack bg-opacity-40 w-full h-full fixed top-0 left-0"
-      onClick={handleClosedModal}
-    >
-      <div className={cn('bg-customWhite absolute', className)}>{children}</div>
-    </div>
+    <>
+      <div className={cn('bg-customWhite absolute z-50', className)}>
+        {children}
+      </div>
+      <div
+        className="bg-customBlack bg-opacity-40 w-full h-[120%] fixed top-0 left-0 z-30"
+        onClick={handleClosedModal}
+      ></div>
+    </>
   );
 };
 

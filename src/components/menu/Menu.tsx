@@ -8,7 +8,7 @@ interface Props {
 
 export const Menu = ({ handleClosed }: Props) => {
   return (
-    <Modal.ModalBody className="flex flex-col gap-[68px] items-center sm:flex-row sm:gap-[10px] sm:justify-center px-6 pt-20 pb-8 top-[90px] left-0 z-20 max-h-[750px]  w-full sm:h-[340px] ">
+    <Modal.ModalBody className="flex flex-col gap-[68px] items-center px-6 pt-20 pb-8 top-[90px] left-0 max-h-[750px] w-full sm:flex-row sm:gap-[10px] sm:justify-center sm:h-[340px]">
       {categories.map((item) => (
         <CategoryCard
           key={item.id}
