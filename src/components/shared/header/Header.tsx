@@ -11,7 +11,7 @@ export const Header = () => {
   // border-b border-customWhite  sm:border-none sm:border-opacity-[0.104]
   // border-opacity-[0.104] sm:border-customWhite border-b sm:border-opacity-20
   return (
-    <header className="bg-[rgb(25,25,25)] h-[89px] lg:h-[96px] sm:px-10 relative z-20 border-b border-customWhite border-opacity-[0.104] sm:border-b-0 sm:border-none">
+    <header className="bg-[rgb(25,25,25)] h-[89px] lg:h-[96px] sm:px-10 relative z-10 border-b border-customWhite border-opacity-[0.104] sm:border-b-0 sm:border-none">
       <section className="container mx-auto flex justify-between items-center h-full w-full px-6 gap-[42px] md:px-0 sm:border-customWhite sm:border-b sm:border-opacity-[0.104]">
         <div className="lg:hidden">
           <img

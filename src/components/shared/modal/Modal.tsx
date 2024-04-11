@@ -2,6 +2,7 @@ import { cn } from '../../../utils';
 import { PropsChildren } from '../../../types';
 import { useModalContext } from '../../../hooks/useModalContext';
 import { Menu } from '../../menu/Menu';
+import { createPortal } from 'react-dom';
 
 const ModalContent = () => {
   const { handleClosedModal, modalState } = useModalContext();
@@ -20,16 +21,17 @@ interface Props extends PropsChildren {
 
 const ModalBody = ({ children, className }: Props) => {
   const { handleClosedModal } = useModalContext();
-  return (
+  return createPortal(
     <>
-      <div className={cn('bg-customWhite absolute z-50', className)}>
+      <div className={cn('bg-customWhite absolute z-20', className)}>
         {children}
       </div>
       <div
-        className="bg-customBlack bg-opacity-40 w-full h-[120%] fixed top-0 left-0 z-30"
+        className="bg-customBlack bg-opacity-40 w-full h-[120%] fixed top-0 left-0 z-10"
         onClick={handleClosedModal}
       ></div>
-    </>
+    </>,
+    document.body
   );
 };
 
