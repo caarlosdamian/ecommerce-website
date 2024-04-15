@@ -6,7 +6,7 @@ import arrow from '../../../assets/shared/desktop/icon-arrow-right.svg';
 import { useIntl } from 'react-intl';
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
-  variant: 'primary' | 'secondary' | 'link';
+  variant: 'primary' | 'secondary' | 'link' | 'third';
   id: string;
 }
 

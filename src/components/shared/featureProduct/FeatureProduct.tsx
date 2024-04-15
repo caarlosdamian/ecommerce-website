@@ -1,7 +1,4 @@
-import React from "react";
 import { Button } from "../button/Button";
-import img from "../../../assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg";
-import imgtablet from "../../../assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg";
 import imgdesk from "../../../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg";
 import { Product } from "../../../types";
 
@@ -11,6 +8,7 @@ interface Props {
 }
 
 export const FeatureProduct = ({ isNew }: Props) => {
+  // TODO: ADD translations
   return (
     <div className="flex flex-col max-w[327px] items-center gap-8 sm:gap-[52px] lg:flex-row lg:gap-[125px] lg:even:flex-row-reverse">
       <img
