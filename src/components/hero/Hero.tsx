@@ -1,10 +1,10 @@
 import { Button } from '../shared/button/Button';
 
 export const Hero = () => {
-  // TODO: Add translations 
+  // TODO: Add translations
   return (
     <section className="w-screen bg-[rgb(25,25,25)] h-full relative">
-      <div className="container mx-auto pt-[108px] px-6 pb-[112px] sm:px-[195px] lg:px-[165px] ">
+      <div className="container mx-auto pt-[108px] px-6 pb-[112px] sm:px-[195px] lg:px-0 lg:max-w-[1110px] ">
         <div className="flex items-center flex-col gap-4 relative z-10 sm:gap-6 lg:items-start max-w-[398px]">
           <span className="separateText text-customWhite opacity-45">
             NEW PRODUCT
