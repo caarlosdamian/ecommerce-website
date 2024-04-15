@@ -9,7 +9,7 @@ export const Footer = () => {
   return (
     <footer className="bg-secondary">
       <section
-        className="container mx-auto h-[654px] pt-14 px-6 pb-8 flex flex-col items-center gap-12 sm:pt-[60px] sm:px-10 sm:pb-[46px] sm:flex-row sm:flex-wrap sm:gap-0 sm:h-[400px] lg:px-0"
+        className="container mx-auto h-[654px] pt-14 px-6 pb-8 flex flex-col items-center gap-12 sm:pt-[60px] sm:px-10 sm:pb-[46px] sm:flex-row sm:flex-wrap sm:gap-0 sm:h-[400px] lg:px-0 lg:max-w-[1110px]"
         id="footer-container"
         role="contentinfo"
         aria-label="Footer"
