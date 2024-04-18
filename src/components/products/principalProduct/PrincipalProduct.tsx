@@ -2,14 +2,14 @@ import {
   patternCircles,
   principalProductDesktop,
   principalProductMobile,
-} from '../../assets';
-import { Button } from '../shared/button/Button';
+} from '../../../assets';
+import { Button } from '../../shared/button/Button';
 
 export const PrincipalProduct = () => {
   // Remove pb-11
   // TODO: ADD translations 
   return (
-    <div className="px-6 pb-11 sm:px-10">
+    <div className="px-6 sm:px-10">
       <div className="bg-primary px-6 py-14 relative rounded-lg overflow-hidden sm:px-[170px] sm:py-16 lg:flex lg:pb-0 lg:gap-[140px] lg:pt-[133px] lg:min-h-[560px] lg:max-w-[1110px] lg:mx-auto">
         <img
           src={patternCircles}
