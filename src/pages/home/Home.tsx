@@ -1,6 +1,10 @@
-import { Hero } from '../../components/hero/Hero';
-import { PrincipalProduct } from '../../components/principalProduct/PrincipalProduct';
-import { CategoryCard } from '../../components/shared/categoryCard/CategoryCard';
+import {
+  PrincipalProduct,
+  SecondaryProduct,
+  ThirdProduct,
+  CategoryCard,
+  Hero,
+} from '../../components';
 import { categories } from '../../constants';
 
 export const Home = () => {
@@ -12,7 +16,11 @@ export const Home = () => {
           <CategoryCard category={id} path={path} productImg={img} key={id} />
         ))}
       </div>
-      <PrincipalProduct />
+      <div className="flex w-full flex-col items-center gap-6 sm:gap-8">
+        <PrincipalProduct />
+        <SecondaryProduct />
+        <ThirdProduct />
+      </div>
     </section>
   );
 };

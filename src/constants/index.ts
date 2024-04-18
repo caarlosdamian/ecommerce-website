@@ -4,7 +4,7 @@ export const BtnVariants = {
   LINK: '',
   PRIMARY: 'bg-primary hover:bg-third p-[15px] min-w-[160px]',
   SECONDARY:
-    'bg-customWhite border ring-customBlack text-customBlack hover:text-customWhite hover:bg-customBlack p-[15px] min-w-[160px]',
+    'bg-trasparent  ring-1 ring-customBlack text-customBlack hover:text-customWhite hover:bg-customBlack p-[15px] min-w-[160px]',
   THIRD:
     'text-customWhite bg-customBlack p-[15px] min-w-[160px] hover:bg-[#4C4C4C]',
 };

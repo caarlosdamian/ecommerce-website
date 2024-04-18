@@ -18,6 +18,18 @@ export default {
         'hero-mobile': "url('/src/assets/home/mobile/image-header.jpg')",
         'hero-tablet': "url('/src/assets/home/tablet/image-header.jpg')",
         'hero-desktop': "url('/src/assets/home/desktop/image-hero.jpg')",
+        'home-products-two-mobile':
+          "url('/src/assets/home/mobile/image-speaker-zx7.jpg')",
+        'home-products-two-tablet':
+          "url('/src/assets/home/tablet/image-speaker-zx7.jpg')",
+        'home-products-two-desktop':
+          "url('/src/assets/home/desktop/image-speaker-zx7.jpg')",
+        'home-products-third-mobile':
+          "url('/src/assets/home/mobile/image-earphones-yx1.jpg')",
+        'home-products-third-tablet':
+          "url('/src/assets/home/tablet/image-earphones-yx1.jpg')",
+        'home-products-third-desktop':
+          "url('/src/assets/home/desktop/image-earphones-yx1.jpg')",
       },
     },
   },

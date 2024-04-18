@@ -22,7 +22,7 @@ export const Button = ({ variant, id, ...props }: Props) => {
       )}
     >
       {variant === 'link' ? (
-        <div className="flex gap-3 items-center">
+        <div className="flex gap-3 items-center ">
           <span className="text-customBlack text-opacity-45 hover:text-primary hover:text-opacity-100">
             {formatMessage({ id })}
           </span>
