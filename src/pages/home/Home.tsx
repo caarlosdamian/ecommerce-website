@@ -5,6 +5,7 @@ import {
   CategoryCard,
   Hero,
 } from '../../components';
+import { Feature } from '../../components/shared/feature/Feature';
 import { categories } from '../../constants';
 
 export const Home = () => {
@@ -21,6 +22,11 @@ export const Home = () => {
         <SecondaryProduct />
         <ThirdProduct />
       </div>
+      <Feature
+        header="feature_header"
+        desc="feature_desc"
+        imgcls="bg-shared-head-mobile sm:bg-shared-head-tablet lg:bg-shared-head-desktop"
+      />
     </section>
   );
 };

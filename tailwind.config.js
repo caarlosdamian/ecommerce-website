@@ -18,6 +18,12 @@ export default {
         'hero-mobile': "url('/src/assets/home/mobile/image-header.jpg')",
         'hero-tablet': "url('/src/assets/home/tablet/image-header.jpg')",
         'hero-desktop': "url('/src/assets/home/desktop/image-hero.jpg')",
+        'shared-head-mobile':
+          "url('/src/assets/shared/mobile/image-best-gear.jpg')",
+        'shared-head-tablet':
+          "url('/src/assets/shared/tablet/image-best-gear.jpg')",
+        'shared-head-desktop':
+          "url('/src/assets/shared/desktop/image-best-gear.jpg')",
         'home-products-two-mobile':
           "url('/src/assets/home/mobile/image-speaker-zx7.jpg')",
         'home-products-two-tablet':

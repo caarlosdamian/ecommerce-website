@@ -1,6 +1,7 @@
 import { Button } from '../../shared/button/Button';
 
 export const ThirdProduct = () => {
+    // TODO: ADD translations get props
   return (
     <div className="min-w-[327px] min-h-[424px] mb-9 mx-auto sm:min-w-[689px] lg:min-w-[1110px]">
       <div className="w-full h-full flex flex-col gap-6 sm:flex-row">
