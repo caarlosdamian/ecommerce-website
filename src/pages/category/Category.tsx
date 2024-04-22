@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import { CategoryCard, Feature } from '../../components';
 import { categories } from '../../constants';
 import data from '../../constants/data.json';
@@ -7,24 +7,22 @@ import { FeatureProduct } from '../../components/shared/featureProduct/FeaturePr
 import { compararProductos } from '../../utils';
 
 export const Category = () => {
-  const location = useLocation();
-  const category = useMemo(() => location.pathname.split('/')[2], [location]);
+  const { categoryId } = useParams();
   const products = useMemo(
-    () => data.filter((product) => product.category === category),
-    [category]
+    () => data.filter((product) => product.category === categoryId),
+    [categoryId]
   );
 
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
-  }, [category])
-  
+  }, [categoryId]);
 
   return (
-    <div className='pt-16 flex flex-col gap-[120px]'>
+    <div className="pt-16 flex flex-col gap-[120px]">
       <div className="container max-w-[1110px] mx-auto px-6 flex flex-col gap-[120px]">
         {products.sort(compararProductos).map((product) => (
           <FeatureProduct product={product} key={product.id} />
