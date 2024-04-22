@@ -1,3 +1,4 @@
+export { Feature } from './feature/Feature';
 export { Hero } from '../hero/Hero';
 export { CategoryCard } from './categoryCard/CategoryCard';
 export { Footer } from './footer/Footer';
