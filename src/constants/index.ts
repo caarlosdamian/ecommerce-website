@@ -16,7 +16,7 @@ export const headerLinks = [
   },
   {
     id: 'header_headphone_label',
-    path: '/category/headphone',
+    path: '/category/headphones',
   },
   {
     id: 'header_speakers_label',
@@ -33,7 +33,7 @@ export const categories = [
     id: 'header_headphone_label',
     img: headphones,
     imgAlt: 'category_headphone_img_alt',
-    path: '/category/headphone',
+    path: '/category/headphones',
   },
   {
     id: 'header_speakers_label',
