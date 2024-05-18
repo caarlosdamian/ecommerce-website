@@ -5,8 +5,8 @@ import { router } from './routes/routes.tsx';
 import { IntlProvider } from 'react-intl';
 import { LOCALES, messages } from './translations/index.ts';
 import { messagesI } from './types/index.ts';
-import './styles/index.css';
 import { ModalContextProvider } from './context/modal/modalContext.tsx';
+import './styles/index.css';
 
 const i18nConfig: { locale: keyof messagesI } = {
   locale: navigator.languages[0] !== 'en' ? 'en' : 'en',

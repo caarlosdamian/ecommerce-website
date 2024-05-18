@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export interface BtnVariantsI {
   LINK: string;
@@ -17,7 +17,7 @@ export interface CategoryI {
   category: string;
   productImg: string;
   path: string;
-  action?: ()=>void
+  action?: () => void;
 }
 
 export interface ImageUrls {
@@ -37,27 +37,52 @@ export interface IncludedItem {
   item: string;
 }
 
-export interface Product {
-  id: number;
-  slug: string;
-  name: string;
-  image: ImageUrls;
-  category: string;
-  categoryImage: CategoryImageUrls;
-  new: boolean;
-  price: number;
-  description: string;
-  features: string;
-  includes: IncludedItem[];
-}
-
 export interface messagesI {
   en: { [key: string]: string };
 }
 
 export interface PropsChildren {
-  children: ReactNode
+  children: ReactNode;
 }
-export interface ModalContextInitialState  {
-type: 'idle' | 'cart' | 'menu' | 'order',
+export interface ModalContextInitialState {
+  type: 'idle' | 'cart' | 'menu' | 'order';
+}
+
+export interface ProductI {
+  id: number;
+  slug: string;
+  name: string;
+  image: Image;
+  category: string;
+  categoryImage: Image;
+  new: boolean;
+  price: number;
+  description: string;
+  features: string;
+  includes: Include[];
+  gallery: Gallery;
+  others: Other[];
+}
+
+interface Other {
+  slug: string;
+  name: string;
+  image: Image;
+}
+
+export interface Gallery {
+  first: Image;
+  second: Image;
+  third: Image;
+}
+
+interface Include {
+  quantity: number;
+  item: string;
+}
+
+interface Image {
+  mobile: string;
+  tablet: string;
+  desktop: string;
 }
