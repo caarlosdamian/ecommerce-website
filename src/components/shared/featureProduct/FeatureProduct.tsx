@@ -39,7 +39,7 @@ export const FeatureProduct = ({ product }: Props) => {
           {product.description}
         </p>
 
-        <Link to={`/product/${product.id}`} state={{ product }}>
+        <Link to={`/product/${product.slug}`} state={{ product }}>
           <Button variant="primary" id="btn_see_product_label" />
         </Link>
       </div>

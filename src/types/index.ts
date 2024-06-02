@@ -64,7 +64,7 @@ export interface ProductI {
   others: Other[];
 }
 
-interface Other {
+export interface Other {
   slug: string;
   name: string;
   image: Image;

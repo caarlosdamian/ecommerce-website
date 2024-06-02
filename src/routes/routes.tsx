@@ -10,7 +10,7 @@ export const router = createBrowserRouter(
     <Route path="/" element={<Root />}>
       <Route index element={<Home />} />
       <Route path='/category/:categoryId' element={<Category />} />
-      <Route path='/product/:id' element={<Product />} />
+      <Route path='/product/:slug' element={<Product />} />
     </Route>
   )
 );
