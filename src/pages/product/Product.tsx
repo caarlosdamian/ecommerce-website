@@ -1,12 +1,15 @@
-import { useLocation } from 'react-router-dom';
-import { ProductI } from '../../types';
+import { useParams } from 'react-router-dom';
 import { categories } from '../../constants';
-import { CategoryCard, OtherProduct, Mosaic } from '../../components';
+import { CategoryCard, OtherProduct, Mosaic, Feature } from '../../components';
+// this will be remove when api is up
+import data from '../../constants/data.json';
+import { useScrollTop } from '../../hooks/useScrollTop';
 
 export const Product = () => {
-  const { state } = useLocation();
-  const { product } = state as { product: ProductI };
-  // remove py-8
+  const { slug } = useParams<{ slug: string }>();
+  const [product] = data.filter((productItem) => productItem.slug === slug);
+  useScrollTop(slug);
+
   return (
     <div className="container max-w-[1110px] mx-auto py-8 px-6 flex flex-col gap-[120px]">
       <Mosaic images={product.gallery} />
@@ -22,6 +25,11 @@ export const Product = () => {
           <CategoryCard category={id} path={path} productImg={img} key={id} />
         ))}
       </div>
+      <Feature
+        header="feature_header"
+        desc="feature_desc"
+        imgcls="bg-shared-head-mobile sm:bg-shared-head-tablet lg:bg-shared-head-desktop"
+      />
     </div>
   );
 };

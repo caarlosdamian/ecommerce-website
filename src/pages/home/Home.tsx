@@ -4,8 +4,8 @@ import {
   ThirdProduct,
   CategoryCard,
   Hero,
+  Feature,
 } from '../../components';
-import { Feature } from '../../components/shared/feature/Feature';
 import { categories } from '../../constants';
 
 export const Home = () => {

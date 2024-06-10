@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Button } from '../shared/button/Button';
 
 export const Hero = () => {
@@ -16,7 +17,9 @@ export const Hero = () => {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Button variant="primary" id="btn_see_product_label" />
+          <Link to="/product/xx99-mark-two-headphones">
+            <Button variant="primary" id="btn_see_product_label" />
+          </Link>
         </div>
         <div className="w-full h-[116%] bg-hero-mobile bg-no-repeat bg-contain bg-center top-[-6rem] left-0 absolute sm:bg-hero-tablet lg:bg-hero-desktop z-2"></div>
       </div>

@@ -1,10 +1,11 @@
-import {  useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { CategoryCard, Feature } from '../../components';
 import { categories } from '../../constants';
 import data from '../../constants/data.json';
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import { FeatureProduct } from '../../components/shared/featureProduct/FeatureProduct';
 import { compararProductos } from '../../utils';
+import { useScrollTop } from '../../hooks/useScrollTop';
 
 export const Category = () => {
   const { categoryId } = useParams();
@@ -12,14 +13,7 @@ export const Category = () => {
     () => data.filter((product) => product.category === categoryId),
     [categoryId]
   );
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
-  }, [categoryId]);
+  useScrollTop(categoryId);
 
   return (
     <div className="pt-16 flex flex-col gap-[120px]">
