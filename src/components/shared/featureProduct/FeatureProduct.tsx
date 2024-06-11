@@ -32,7 +32,7 @@ export const FeatureProduct = ({ product }: Props) => {
             {formatMessage({ id: 'generic_new_product' })}
           </span>
         )}
-        <h5 className="h4-bold text-customBlack sm:h2-bold uppercase">
+        <h5 className="h4-bold text-customBlack sm:h2-bold uppercase text-center md:text-start">
           {product.name}
         </h5>
         <p className="body text-center text-opacity-50 text-customBlack sm:max-w-[572px] lg:text-start lg:mb-2">
