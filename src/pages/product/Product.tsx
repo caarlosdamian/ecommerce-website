@@ -4,16 +4,48 @@ import { CategoryCard, OtherProduct, Mosaic, Feature } from '../../components';
 // this will be remove when api is up
 import data from '../../constants/data.json';
 import { useScrollTop } from '../../hooks/useScrollTop';
+import { Button } from '../../components/shared/button/Button';
+import { QuantityButton } from '../../components/shared/quantityButton/QuantityButton';
+import { useIntl } from 'react-intl';
+import { ResponsiveImage } from '../../components/shared/responsiveImage/ResponsiveImage';
 
 export const Product = () => {
   const { slug } = useParams<{ slug: string }>();
   const [product] = data.filter((productItem) => productItem.slug === slug);
   useScrollTop(slug);
+  const { formatNumber } = useIntl();
 
   return (
     <div className="container max-w-[1110px] mx-auto py-8 px-6 flex flex-col gap-[120px]">
-      <div className="">
-        <div className=""></div>
+      <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-8 sm:flex-row">
+          <ResponsiveImage
+            desktop={product.image.desktop}
+            mobile={product.image.mobile}
+            tablet={product.image.tablet}
+            className="sm:max-w-[218px] lg:max-w-[540px]"
+          />
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6">
+              <span className="separateText text-primary ">NEW PRODUCT</span>
+              <h2 className="text-[28px] font-bold  tracking-[1px] uppercase">
+                {product.name}
+              </h2>
+              <p className="body opacity-50">{product.description}</p>
+            </div>
+            <div className="flex flex-col gap-8">
+              <p className="medium-bold">$ {formatNumber(product.price)}</p>
+              <div className="flex gap-4 items-center h-[48px]">
+                <QuantityButton>{(count) => count}</QuantityButton>
+                <Button
+                  style={{ height: '100%' }}
+                  variant="primary"
+                  id="generic_add_to_cart"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
         {/* details */}
         <div className="flex flex-col gap-20 lg:flex-row lg:gap-32">
           <div className="flex flex-col gap-6 flex-1">
