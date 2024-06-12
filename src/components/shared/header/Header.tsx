@@ -37,7 +37,11 @@ export const Header = () => {
           </ul>
         </div>
         <div className="sm:flex-2">
-          <img src={cart} alt="cart" />
+          <img
+            src={cart}
+            alt="cart"
+            onClick={() => handleOpenModal(ModalActionTypes.OPEN_CART)}
+          />
         </div>
       </section>
     </header>

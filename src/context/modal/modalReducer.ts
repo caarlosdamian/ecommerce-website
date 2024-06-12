@@ -13,6 +13,10 @@ export const modalReducer = (
       return {
         type: 'menu',
       };
+    case ModalActionTypes.OPEN_CART:
+      return {
+        type: 'cart',
+      };
     default:
       return state;
   }

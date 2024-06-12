@@ -3,10 +3,12 @@ import { PropsChildren } from '../../../types';
 import { useModalContext } from '../../../hooks/useModalContext';
 import { Menu } from '../../menu/Menu';
 import { createPortal } from 'react-dom';
+import { Cart } from '../cart/Cart';
 
 const ModalContent = () => {
   const { handleClosedModal, modalState } = useModalContext();
   if (modalState.type === 'idle') return null;
+  if (modalState.type === 'cart') return <Cart />
   if (modalState.type === 'menu')
     return <Menu handleClosed={handleClosedModal} />;
 };

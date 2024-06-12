@@ -11,7 +11,10 @@ export interface LocaleI {
   ENGLISH: string;
 }
 
-export type ChildrenFunction = (counter: number) => void;
+export type ChildrenFunction = (
+  counter: number,
+  setCounter: React.Dispatch<React.SetStateAction<number>>
+) => void;
 
 export interface CategoryI {
   category: string;
@@ -47,6 +50,7 @@ export interface PropsChildren {
 export interface ModalContextInitialState {
   type: 'idle' | 'cart' | 'menu' | 'order';
 }
+export type CartActionType = 'add' | 'remove';
 
 export interface ProductI {
   id: number;
@@ -62,6 +66,10 @@ export interface ProductI {
   includes: Include[];
   gallery: Gallery;
   others: Other[];
+}
+
+export interface ProductWithQuantity extends ProductI {
+  quantity?: number;
 }
 
 export interface Other {
@@ -86,3 +94,5 @@ interface Image {
   tablet: string;
   desktop: string;
 }
+
+export type CartT = { items: ProductWithQuantity[] };

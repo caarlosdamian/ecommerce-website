@@ -1,21 +1,35 @@
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { categories } from '../../constants';
-import { CategoryCard, OtherProduct, Mosaic, Feature } from '../../components';
+import {
+  CategoryCard,
+  OtherProduct,
+  Mosaic,
+  Feature,
+  ResponsiveImage,
+  Button,
+  QuantityButton,
+} from '../../components';
 // this will be remove when api is up
 import data from '../../constants/data.json';
 import { useScrollTop } from '../../hooks/useScrollTop';
-import { Button } from '../../components/shared/button/Button';
-import { QuantityButton } from '../../components/shared/quantityButton/QuantityButton';
 import { useIntl } from 'react-intl';
-import { ResponsiveImage } from '../../components/shared/responsiveImage/ResponsiveImage';
+import { useCartContext } from '../../hooks/useCartContext';
+import { useCounter } from '../../hooks/useCounter';
+import { useEffect } from 'react';
 
 export const Product = () => {
   const { slug } = useParams<{ slug: string }>();
   const pathname = useLocation();
   const [product] = data.filter((productItem) => productItem.slug === slug);
-  useScrollTop(pathname);
   const { formatNumber } = useIntl();
   const navegate = useNavigate();
+  const { addItemToCart } = useCartContext();
+  const { counter, decrement, increment, resetCounter } = useCounter(1);
+  useScrollTop(pathname);
+
+  useEffect(() => {
+    resetCounter();
+  }, [resetCounter, slug]);
 
   return (
     <div className="container max-w-[1110px] mx-auto py-8 px-6 flex flex-col gap-[120px]">
@@ -44,11 +58,18 @@ export const Product = () => {
             <div className="flex flex-col gap-8">
               <p className="medium-bold">$ {formatNumber(product.price)}</p>
               <div className="flex gap-4 items-center h-[48px]">
-                <QuantityButton>{(count) => count}</QuantityButton>
+                <QuantityButton
+                  counter={counter}
+                  increment={increment}
+                  decrement={decrement}
+                />
                 <Button
-                  style={{ height: '100%' }}
+                  style={{ padding: '10px' }}
                   variant="primary"
                   id="generic_add_to_cart"
+                  onClick={() => {
+                    addItemToCart(product, counter);
+                  }}
                 />
               </div>
             </div>

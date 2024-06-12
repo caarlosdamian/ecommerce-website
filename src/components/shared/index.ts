@@ -1,3 +1,6 @@
+export { ResponsiveImage } from './responsiveImage/ResponsiveImage';
+export { QuantityButton } from './quantityButton/QuantityButton';
+export { Button } from './button/Button';
 export { Mosaic } from './mosaic/Mosaic';
 export { OtherProduct } from '../products/otherProduct/OtherProduct';
 export { Feature } from './feature/Feature';

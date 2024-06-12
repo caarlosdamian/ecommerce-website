@@ -15,10 +15,14 @@ export const Mosaic = ({ images: { first, second, third } }: Props) => {
           index === 2 && 'sm:col-start-2 sm:row-span-2 sm:row-start-1';
         return (
           <ResponsiveImage
-            className={cn(`rounded-lg object-cover h-full`, trhidPictureStyling)}
+            className={cn(
+              `rounded-lg object-cover h-full`,
+              trhidPictureStyling
+            )}
             desktop={desktop}
             mobile={mobile}
             tablet={tablet}
+            key={`mosaic-${index}`}
           />
         );
       })}
