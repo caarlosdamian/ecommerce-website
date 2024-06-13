@@ -4,14 +4,17 @@ export const cartReducer = (
   state: CartT,
   action: {
     type: CartActionType;
-    payload: { product: ProductI; quantity: number };
+    payload?: { product: ProductI; quantity: number };
   }
 ) => {
   const { payload, type } = action;
 
   switch (type) {
     case 'add': {
-      const { product, quantity } = payload;
+      const { product, quantity } = payload as {
+        product: ProductI;
+        quantity: number;
+      };
       const { items } = state;
       if (items.length !== 0) {
         const productIndex = items.findIndex(
@@ -49,13 +52,15 @@ export const cartReducer = (
     }
 
     case 'remove':
+      state = { ...state, items: [] };
       return state;
       break;
     case 'decrement': {
       const { items } = state;
+      const { product } = payload as { product: ProductI; quantity: number };
       if (state.items.length !== 0) {
         const productIndex = items.findIndex(
-          (elemnt) => elemnt.id === payload.product.id
+          (elemnt) => elemnt.id === product.id
         );
         if (productIndex !== -1) {
           if (items[productIndex].quantity === 1) {
@@ -71,8 +76,7 @@ export const cartReducer = (
           items[productIndex] = {
             ...items[productIndex],
             quantity: items[productIndex].quantity - 1,
-            totalPrice:
-              payload.product.price * (items[productIndex].quantity - 1),
+            totalPrice: product.price * (items[productIndex].quantity - 1),
           };
           return {
             items,

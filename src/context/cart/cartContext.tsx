@@ -16,6 +16,10 @@ const CartProvider = ({ children }: PropsChildren) => {
   const removeItemFromCart = (product: ProductI) => {
     dispatch({ type: 'decrement', payload: { product, quantity: 0 } });
   };
+
+  const removeAllItems = () => {
+    dispatch({ type: 'remove' });
+  };
   return (
     <cartContext.Provider
       value={{
@@ -23,6 +27,7 @@ const CartProvider = ({ children }: PropsChildren) => {
         items: state.items,
         removeItemFromCart,
         addItemToCart,
+        removeAllItems,
       }}
     >
       {children}

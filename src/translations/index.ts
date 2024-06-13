@@ -32,5 +32,7 @@ export const messages: messagesI = {
     generic_remove_all: 'Remove all',
     generic_cart: 'cart ({amount})',
     generic_checkout: 'checkout',
+    generic_total: 'total',
+    generic_empty_cart: 'Cart empty',
   },
 };

@@ -7,6 +7,7 @@ interface CartContextHookReturnType {
   totalOfAllProducts: number;
   addItemToCart: (product: ProductI, quantity: number) => void;
   removeItemFromCart: (product: ProductI) => void;
+  removeAllItems: () => void;
 }
 
 export const useCartContext = (): CartContextHookReturnType => {

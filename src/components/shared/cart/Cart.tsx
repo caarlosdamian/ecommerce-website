@@ -5,11 +5,17 @@ import { QuantityButton } from '../quantityButton/QuantityButton';
 import { ProductI, ProductWithQuantity } from '../../../types';
 import { replaceCategory } from '../../../utils';
 import { Button } from '../button/Button';
+import { Link } from 'react-router-dom';
 
 export const Cart = () => {
   const { formatMessage, formatNumber } = useIntl();
-  const { items, addItemToCart, removeItemFromCart, totalOfAllProducts } =
-    useCartContext();
+  const {
+    items,
+    addItemToCart,
+    removeItemFromCart,
+    totalOfAllProducts,
+    removeAllItems,
+  } = useCartContext();
   const handleClick = (type: string, product: ProductI) => {
     if (type === 'decrement') {
       removeItemFromCart(product);
@@ -17,16 +23,22 @@ export const Cart = () => {
       addItemToCart(product, 1);
     }
   };
-  console.log(totalOfAllProducts);
+  const totalItems = items.reduce(
+    (acc, element) => (acc += element.quantity),
+    0
+  );
   return (
-    <Modal.ModalBody className="w-[377px] h-[488px] top-[114px] mx-auto left-0 right-0 rounded-lg px-7 py-8 flex flex-col gap-8">
+    <Modal.ModalBody className="w-[377px] h-[488px] top-[114px] mx-auto left-0 right-0 rounded-lg px-7 py-8 flex flex-col gap-8 sm:right-10 sm:mx-0 sm:left-auto lg:right-[165px]">
       {items.length !== 0 ? (
         <>
           <div className="flex justify-between items-center">
             <p className="uppercase medium-bold">
-              {formatMessage({ id: 'generic_cart' }, { amount: 3 })}
+              {formatMessage({ id: 'generic_cart' }, { amount: totalItems })}
             </p>
-            <p className="body underline opacity-50">
+            <p
+              className="body underline opacity-50 cursor-pointer hover:text-primary"
+              onClick={removeAllItems}
+            >
               {formatMessage({ id: 'generic_remove_all' })}
             </p>
           </div>
@@ -62,21 +74,27 @@ export const Cart = () => {
           </div>
           <div className="flex flex-col gap-6">
             <div className="flex items-center justify-between">
-              <p className="body opacity-50 uppercase">TOTAL</p>
+              <p className="body opacity-50 uppercase">
+                {formatMessage({ id: 'generic_total' })}
+              </p>
               <p className="medium-bold">
                 $ {formatNumber(totalOfAllProducts)}
               </p>
             </div>
-            <Button
-              style={{ width: '100%' }}
-              variant="primary"
-              id="generic_checkout"
-            />
+            <Link to="/checkout">
+              <Button
+                style={{ width: '100%' }}
+                variant="primary"
+                id="generic_checkout"
+              />
+            </Link>
           </div>
         </>
       ) : (
         <div className="flex flex-col items-center justify-between h-full">
-          <h2 className="h3-bold text-center">Cart empty</h2>
+          <h2 className="h3-bold text-center">
+            {formatMessage({ id: 'generic_empty_cart' })}
+          </h2>
         </div>
       )}
     </Modal.ModalBody>
