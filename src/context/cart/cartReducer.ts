@@ -24,7 +24,13 @@ export const cartReducer = (
             totalPrice:
               product.price * (items[productIndex].quantity + quantity),
           };
-          return { items };
+          return {
+            items,
+            totalOfAllProducts: items.reduce(
+              (acc, element) => (acc += element.totalPrice),
+              0
+            ),
+          };
         }
       }
       items.push({
@@ -32,7 +38,13 @@ export const cartReducer = (
         quantity: quantity,
         totalPrice: product.price * quantity,
       });
-      return { items };
+      return {
+        items,
+        totalOfAllProducts: items.reduce(
+          (acc, element) => (acc += element.totalPrice),
+          0
+        ),
+      };
       break;
     }
 
@@ -48,7 +60,13 @@ export const cartReducer = (
         if (productIndex !== -1) {
           if (items[productIndex].quantity === 1) {
             items.splice(productIndex, 1);
-            return { items };
+            return {
+              items,
+              totalOfAllProducts: items.reduce(
+                (acc, element) => (acc += element.totalPrice),
+                0
+              ),
+            };
           }
           items[productIndex] = {
             ...items[productIndex],
@@ -56,10 +74,16 @@ export const cartReducer = (
             totalPrice:
               payload.product.price * (items[productIndex].quantity - 1),
           };
-          return { items };
+          return {
+            items,
+            totalOfAllProducts: items.reduce(
+              (acc, element) => (acc += element.totalPrice),
+              0
+            ),
+          };
         }
       }
-      return { items };
+      return state;
       break;
     }
 

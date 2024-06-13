@@ -98,5 +98,5 @@ interface Image {
 
 export type CartT = {
   items: ProductWithQuantity[];
-  // totalOfAllProducts: number;
+  totalOfAllProducts: number;
 };

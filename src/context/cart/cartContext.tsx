@@ -5,7 +5,10 @@ import { ProductI, PropsChildren } from '../../types';
 const cartContext = createContext({});
 
 const CartProvider = ({ children }: PropsChildren) => {
-  const [state, dispatch] = useReducer(cartReducer, { items: [] });
+  const [state, dispatch] = useReducer(cartReducer, {
+    items: [],
+    totalOfAllProducts: 0,
+  });
 
   const addItemToCart = (product: ProductI, quantity: number) => {
     dispatch({ type: 'add', payload: { product, quantity } });
@@ -15,7 +18,12 @@ const CartProvider = ({ children }: PropsChildren) => {
   };
   return (
     <cartContext.Provider
-      value={{ items: state.items, removeItemFromCart, addItemToCart }}
+      value={{
+        totalOfAllProducts: state.totalOfAllProducts,
+        items: state.items,
+        removeItemFromCart,
+        addItemToCart,
+      }}
     >
       {children}
     </cartContext.Provider>

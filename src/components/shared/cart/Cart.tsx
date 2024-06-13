@@ -8,7 +8,8 @@ import { Button } from '../button/Button';
 
 export const Cart = () => {
   const { formatMessage, formatNumber } = useIntl();
-  const { items, addItemToCart, removeItemFromCart } = useCartContext();
+  const { items, addItemToCart, removeItemFromCart, totalOfAllProducts } =
+    useCartContext();
   const handleClick = (type: string, product: ProductI) => {
     if (type === 'decrement') {
       removeItemFromCart(product);
@@ -16,6 +17,7 @@ export const Cart = () => {
       addItemToCart(product, 1);
     }
   };
+  console.log(totalOfAllProducts);
   return (
     <Modal.ModalBody className="w-[377px] h-[488px] top-[114px] mx-auto left-0 right-0 rounded-lg px-7 py-8 flex flex-col gap-8">
       {items.length !== 0 ? (
@@ -61,7 +63,9 @@ export const Cart = () => {
           <div className="flex flex-col gap-6">
             <div className="flex items-center justify-between">
               <p className="body opacity-50 uppercase">TOTAL</p>
-              <p className="medium-bold">$ 5,396</p>
+              <p className="medium-bold">
+                $ {formatNumber(totalOfAllProducts)}
+              </p>
             </div>
             <Button
               style={{ width: '100%' }}

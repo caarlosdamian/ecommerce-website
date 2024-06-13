@@ -4,6 +4,7 @@ import { cartContext } from '../context/cart/cartContext';
 
 interface CartContextHookReturnType {
   items: ProductWithQuantity[];
+  totalOfAllProducts: number;
   addItemToCart: (product: ProductI, quantity: number) => void;
   removeItemFromCart: (product: ProductI) => void;
 }
