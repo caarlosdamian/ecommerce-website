@@ -48,3 +48,5 @@ export const categories = [
     path: '/category/earphones',
   },
 ];
+
+export const categoriesNames = ['Earphones', 'Speaker', 'Headphones'];

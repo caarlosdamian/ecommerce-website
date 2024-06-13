@@ -69,6 +69,7 @@ export const Product = () => {
                   id="generic_add_to_cart"
                   onClick={() => {
                     addItemToCart(product, counter);
+                    resetCounter();
                   }}
                 />
               </div>

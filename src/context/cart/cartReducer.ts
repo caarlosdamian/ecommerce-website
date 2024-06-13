@@ -11,7 +11,6 @@ export const cartReducer = (
 
   switch (type) {
     case 'add': {
-      console.count('Entrando:')
       const { product, quantity } = payload;
       const { items } = state;
       if (items.length !== 0) {

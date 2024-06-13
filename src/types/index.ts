@@ -69,7 +69,7 @@ export interface ProductI {
 }
 
 export interface ProductWithQuantity extends ProductI {
-  quantity?: number;
+  quantity: number;
 }
 
 export interface Other {
