@@ -46,7 +46,7 @@ export const Cart = () => {
                     </p>
                     {/* Debe ser el total del producto */}
                     <p className="text-sm font-bold leading-[25px] opacity-50">
-                      $ {formatNumber(product.price)}
+                      $ {formatNumber(product.totalPrice)}
                     </p>
                   </div>
                 </div>

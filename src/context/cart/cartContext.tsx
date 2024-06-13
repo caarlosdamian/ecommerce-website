@@ -11,7 +11,7 @@ const CartProvider = ({ children }: PropsChildren) => {
     dispatch({ type: 'add', payload: { product, quantity } });
   };
   const removeItemFromCart = (product: ProductI) => {
-    dispatch({ type: 'remove', payload: { product, quantity: 0 } });
+    dispatch({ type: 'decrement', payload: { product, quantity: 0 } });
   };
   return (
     <cartContext.Provider

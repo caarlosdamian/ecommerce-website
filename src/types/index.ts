@@ -50,7 +50,7 @@ export interface PropsChildren {
 export interface ModalContextInitialState {
   type: 'idle' | 'cart' | 'menu' | 'order';
 }
-export type CartActionType = 'add' | 'remove';
+export type CartActionType = 'add' | 'remove' | 'decrement';
 
 export interface ProductI {
   id: number;
@@ -70,6 +70,7 @@ export interface ProductI {
 
 export interface ProductWithQuantity extends ProductI {
   quantity: number;
+  totalPrice: number;
 }
 
 export interface Other {
@@ -95,4 +96,7 @@ interface Image {
   desktop: string;
 }
 
-export type CartT = { items: ProductWithQuantity[] };
+export type CartT = {
+  items: ProductWithQuantity[];
+  // totalOfAllProducts: number;
+};

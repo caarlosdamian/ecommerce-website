@@ -20,9 +20,9 @@ export const cartReducer = (
         if (productIndex !== -1) {
           items[productIndex] = {
             ...items[productIndex],
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
             quantity: items[productIndex].quantity + quantity,
+            totalPrice:
+              product.price * (items[productIndex].quantity + quantity),
           };
           return { items };
         }
@@ -30,6 +30,7 @@ export const cartReducer = (
       items.push({
         ...product,
         quantity: quantity,
+        totalPrice: product.price * quantity,
       });
       return { items };
       break;
@@ -38,6 +39,29 @@ export const cartReducer = (
     case 'remove':
       return state;
       break;
+    case 'decrement': {
+      const { items } = state;
+      if (state.items.length !== 0) {
+        const productIndex = items.findIndex(
+          (elemnt) => elemnt.id === payload.product.id
+        );
+        if (productIndex !== -1) {
+          if (items[productIndex].quantity === 1) {
+            items.splice(productIndex, 1);
+            return { items };
+          }
+          items[productIndex] = {
+            ...items[productIndex],
+            quantity: items[productIndex].quantity - 1,
+            totalPrice:
+              payload.product.price * (items[productIndex].quantity - 1),
+          };
+          return { items };
+        }
+      }
+      return { items };
+      break;
+    }
 
     default:
       return state;
