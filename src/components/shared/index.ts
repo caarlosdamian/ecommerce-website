@@ -1,3 +1,7 @@
+export { Modal } from './modal/Modal';
+export { ProductDetails } from './productDetails/ProductDetails';
+export { Radio } from './radio/Radio';
+export { TextInput } from './textInput/TextInput';
 export { ResponsiveImage } from './responsiveImage/ResponsiveImage';
 export { QuantityButton } from './quantityButton/QuantityButton';
 export { Button } from './button/Button';

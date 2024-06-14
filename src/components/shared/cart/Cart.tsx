@@ -1,11 +1,10 @@
 import { useIntl } from 'react-intl';
-import { Modal } from '../modal/Modal';
 import { useCartContext } from '../../../hooks/useCartContext';
 import { QuantityButton } from '../quantityButton/QuantityButton';
 import { ProductI, ProductWithQuantity } from '../../../types';
-import { replaceCategory } from '../../../utils';
-import { Button } from '../button/Button';
 import { Link } from 'react-router-dom';
+import { ProductDetails, Modal, Button } from '../';
+import { useModalContext } from '../../../hooks/useModalContext';
 
 export const Cart = () => {
   const { formatMessage, formatNumber } = useIntl();
@@ -16,6 +15,7 @@ export const Cart = () => {
     totalOfAllProducts,
     removeAllItems,
   } = useCartContext();
+  const { handleClosedModal } = useModalContext();
   const handleClick = (type: string, product: ProductI) => {
     if (type === 'decrement') {
       removeItemFromCart(product);
@@ -48,22 +48,11 @@ export const Cart = () => {
                 className="flex items-center justify-between"
                 key={product.id}
               >
-                <div className="flex gap-4">
-                  <img
-                    className="w-16 h-16 rounded-lg"
-                    src={product.image.mobile}
-                    alt="product image"
-                  />
-                  <div className="flex flex-col gap-1">
-                    <p className="subtitle-bold uppercase">
-                      {replaceCategory(product.name)}
-                    </p>
-                    {/* Debe ser el total del producto */}
-                    <p className="text-sm font-bold leading-[25px] opacity-50">
-                      $ {formatNumber(product.totalPrice)}
-                    </p>
-                  </div>
-                </div>
+                <ProductDetails
+                  img={product.image.mobile}
+                  name={product.name}
+                  totalPrice={product.totalPrice}
+                />
                 <QuantityButton
                   counter={product.quantity}
                   decrement={() => handleClick('decrement', product)}
@@ -81,7 +70,7 @@ export const Cart = () => {
                 $ {formatNumber(totalOfAllProducts)}
               </p>
             </div>
-            <Link to="/checkout">
+            <Link to="/checkout" onClick={handleClosedModal}>
               <Button
                 style={{ width: '100%' }}
                 variant="primary"

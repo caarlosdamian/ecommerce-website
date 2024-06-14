@@ -1,14 +1,35 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { HtmlHTMLAttributes } from 'react';
 import { cn } from '../../../utils';
 import { useIntl } from 'react-intl';
+import {
+  FieldError,
+  FieldErrorsImpl,
+  FieldValues,
+  Merge,
+  UseFormRegister,
+} from 'react-hook-form';
 
 interface Props extends HtmlHTMLAttributes<HTMLInputElement> {
   label: string;
   placeholder: string;
-  isError: boolean;
+  isError:
+    | string
+    | FieldError
+    | Merge<FieldError, FieldErrorsImpl<any>>
+    | undefined;
+  register: UseFormRegister<FieldValues>;
+  inputName: string;
 }
 
-export const TextInput = ({ label, isError, placeholder, ...props }: Props) => {
+export const TextInput = ({
+  label,
+  isError,
+  placeholder,
+  register,
+  inputName,
+  ...props
+}: Props) => {
   const { formatMessage } = useIntl();
   // TODO:  ADD STATES
   return (
@@ -19,16 +40,13 @@ export const TextInput = ({ label, isError, placeholder, ...props }: Props) => {
         </span>
         {isError && (
           <span className="small text-error">
-            {formatMessage(
-              { id: 'form_error' },
-              { element: formatMessage({ id: label }) }
-            )}
+            {isError as unknown as string}
           </span>
         )}
       </div>
       <input
         type="text"
-        name={label}
+        {...register(inputName)}
         {...props}
         placeholder={formatMessage({ id: placeholder })}
         className={cn(

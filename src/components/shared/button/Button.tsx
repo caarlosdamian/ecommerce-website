@@ -1,11 +1,11 @@
-import { HTMLAttributes } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 import { cn } from '../../../utils';
 import { BtnVariantsI } from '../../../types';
 import { BtnVariants } from '../../../constants';
 import arrow from '../../../assets/shared/desktop/icon-arrow-right.svg';
 import { useIntl } from 'react-intl';
 
-interface Props extends HTMLAttributes<HTMLButtonElement> {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: 'primary' | 'secondary' | 'link' | 'third';
   id: string;
 }
