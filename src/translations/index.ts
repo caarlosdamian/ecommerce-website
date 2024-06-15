@@ -64,6 +64,10 @@ export const messages: messagesI = {
     form_summary_shipping: 'shipping',
     form_summary_vat: 'vat (included)',
     form_summary_grand_total: 'grand total',
+    checkout_btn: 'BACK TO HOME',
+    checkout_view_less: 'View less',
+    checkout_items: 'and {count} other item(s)',
+
 
     // form_submit_btn:'CONTINUE & PAY'
   },

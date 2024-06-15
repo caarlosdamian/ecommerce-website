@@ -36,7 +36,7 @@ export const Product = () => {
       <div className="flex flex-col ">
         <button
           onClick={() => navegate(-1)}
-          className="text-left body opacity-50 mb-6"
+          className="text-left body opacity-50 mb-6 hover:text-primary"
         >
           Go Back
         </button>

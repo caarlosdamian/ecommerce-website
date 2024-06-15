@@ -4,11 +4,13 @@ import { useModalContext } from '../../../hooks/useModalContext';
 import { Menu } from '../../menu/Menu';
 import { createPortal } from 'react-dom';
 import { Cart } from '../cart/Cart';
+import { CheckoutModal } from '../checkoutModal/CheckoutModal';
 
 const ModalContent = () => {
   const { handleClosedModal, modalState } = useModalContext();
   if (modalState.type === 'idle') return null;
-  if (modalState.type === 'cart') return <Cart />
+  if (modalState.type === 'order') return <CheckoutModal />;
+  if (modalState.type === 'cart') return <Cart />;
   if (modalState.type === 'menu')
     return <Menu handleClosed={handleClosedModal} />;
 };

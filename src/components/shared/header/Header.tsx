@@ -4,10 +4,17 @@ import { headerLinks } from '../../../constants';
 import { useIntl } from 'react-intl';
 import { useModalContext } from '../../../hooks/useModalContext';
 import { ModalActionTypes } from '../../../context/modal/modalActions';
+import { useCartContext } from '../../../hooks/useCartContext';
+import { useMemo } from 'react';
 
 export const Header = () => {
   const { formatMessage } = useIntl();
   const { handleOpenModal } = useModalContext();
+  const { items } = useCartContext();
+  const allProductsCount = items.reduce((acc, element) => {
+    return (acc += element.quantity);
+  }, 0);
+
   return (
     <header className="bg-[rgb(25,25,25)] h-[89px] lg:h-[96px] sm:px-10 relative z-10 border-b border-customWhite border-opacity-[0.104] sm:border-b-0 sm:border-none">
       <section className="container mx-auto flex justify-between items-center h-full w-full px-6 gap-[42px] md:px-0 sm:border-customWhite sm:border-b sm:border-opacity-[0.104] max-w-[1110px]">
@@ -36,12 +43,16 @@ export const Header = () => {
             ))}
           </ul>
         </div>
-        <div className="sm:flex-2">
-          <img
-            src={cart}
-            alt="cart"
-            onClick={() => handleOpenModal(ModalActionTypes.OPEN_CART)}
-          />
+        <div
+          className="sm:flex-2 relative cursor-pointer"
+          onClick={() => handleOpenModal(ModalActionTypes.OPEN_CART)}
+        >
+          <img src={cart} alt="cart" />
+          {items.length !== 0 && (
+            <div className="absolute top-[-10px] right-[-12px] rounded-full h-5 w-5 bg-red-600 flex items-center justify-center">
+              <span className="text-white small">{allProductsCount}</span>
+            </div>
+          )}
         </div>
       </section>
     </header>

@@ -10,9 +10,13 @@ import heroMobile from './home/mobile/image-header.jpg';
 import principalProductMobile from './home/mobile/image-speaker-zx9.png';
 import principalProductDesktop from './home/desktop/image-speaker-zx9.png';
 import patternCircles from './home/desktop/pattern-circles.svg';
+import orderConfirmation from './checkout/icon-order-confirmation.svg';
+import cashOnDelivery from './checkout/icon-cash-on-delivery.svg';
 
 export {
   cart,
+  cashOnDelivery,
+  orderConfirmation,
   logo,
   facebook,
   iconArrowRight,
