@@ -5,7 +5,6 @@ import { useIntl } from 'react-intl';
 import { useModalContext } from '../../../hooks/useModalContext';
 import { ModalActionTypes } from '../../../context/modal/modalActions';
 import { useCartContext } from '../../../hooks/useCartContext';
-import { useMemo } from 'react';
 
 export const Header = () => {
   const { formatMessage } = useIntl();
