@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   patternCircles,
   principalProductDesktop,
@@ -36,7 +37,9 @@ export const PrincipalProduct = () => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <Button variant="third" id="btn_see_product_label" />
+          <Link to={`/product/zx9-speaker/`}>
+            <Button variant="third" id="btn_see_product_label" />
+          </Link>
         </div>
       </div>
     </div>
